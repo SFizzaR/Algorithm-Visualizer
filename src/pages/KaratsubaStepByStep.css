@@ -1,0 +1,167 @@
+
+
+/* Ensure no gaps in the page layout */
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for Karatsuba Container */
+.karatsuba-container {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    background-color: #2a2b47; /* Slightly lighter card background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .karatsuba-container {
+        padding: 20px;
+    }
+}
+
+/* Styling for the title */
+.karatsuba-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Styling for the description text */
+.karatsuba-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #d1d1e9; /* Soft lavender description text */
+}
+
+/* Styling for file input */
+input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+/* Styling for the custom file input button */
+.custom-file-input {
+    background-color: #9c78ca;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.custom-file-input:hover {
+    background-color: #7c5ca5; /* Slightly darker purple */
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.custom-file-input:active {
+    background-color: #5a4078; /* Even darker purple for active state */
+    transform: scale(1); /* Reset zoom effect */
+}
+
+/* Custom file select container for better visual appearance */
+.file-select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.file-select-container label {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Button container to align buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Styling for buttons */
+.action-button {
+    background-color: #9c78ca;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #7c5ca5; /* Slightly darker purple */
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.action-button:active {
+    background-color: #5a4078; /* Even darker purple for active state */
+    transform: scale(1); /* Reset zoom effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .karatsuba-container {
+        padding: 15px;
+    }
+
+    .karatsuba-title {
+        font-size: 2rem;
+    }
+
+    .karatsuba-description {
+        font-size: 1rem;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .custom-file-input {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .Previous, .Next {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+/* Styling for GoHome button */
+.GoHome {
+    background-color: #f44336; /* Red background for home button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.GoHome:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}

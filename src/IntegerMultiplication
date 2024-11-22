@@ -1,0 +1,30 @@
+function karatsuba(x, y) {
+    // Base case: if the number is small enough, just multiply directly
+    if (x < 10 || y < 10) {
+        return x * y;
+    }
+
+    // Determine the size of the numbers
+    const n = Math.max(x.toString().length, y.toString().length);
+    const half = Math.floor(n / 2);
+
+    // Split x and y into two halves
+    const high1 = Math.floor(x / Math.pow(10, half));
+    const low1 = x % Math.pow(10, half);
+    const high2 = Math.floor(y / Math.pow(10, half));
+    const low2 = y % Math.pow(10, half);
+
+    // Recursively calculate three products
+    const z0 = karatsuba(low1, low2); // low1 * low2
+    const z1 = karatsuba(low1 + high1, low2 + high2); // (low1 + high1) * (low2 + high2)
+    const z2 = karatsuba(high1, high2); // high1 * high2
+
+    // Combine the results
+    return z2 * Math.pow(10, 2 * half) + (z1 - z2 - z0) * Math.pow(10, half) + z0;
+}
+
+// Example usage:
+const num1 = 1234;
+const num2 = 5678;
+const result = karatsuba(num1, num2);
+console.log(`The product of ${num1} and ${num2} is ${result}`);

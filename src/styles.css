@@ -1,0 +1,108 @@
+/* Ensure full background color coverage */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #121038; /* Uniform dark navy background */
+    font-family: 'Lato', sans-serif; /* Use Lato for the font */
+    display: flex; /* Enable centering for the main content */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Ensure no gaps in the page layout */
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for Home Page Container */
+.home-page {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: #2a2b47; /* Slightly lighter card background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Styling for the title */
+.home-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #9c78ca; /* Vibrant purple title */
+}
+
+/* Styling for the description text */
+.home-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #d1d1e9; /* Soft lavender description text */
+}
+
+/* Button container to align buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Styling for buttons */
+.algorithm-button {
+    background-color: #9c78ca;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.algorithm-button:hover {
+    background-color: #7c5ca5; /* Slightly darker purple */
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.algorithm-button:active {
+    background-color: #5a4078; /* Even darker purple for active state */
+    transform: scale(1); /* Reset zoom effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .home-page {
+        padding: 15px;
+    }
+
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .home-description {
+        font-size: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .algorithm-button {
+        width: 100%; /* Full width for smaller screens */
+    }
+}

@@ -1,0 +1,153 @@
+/* Ensure no gaps in the page layout */
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for Closest Pair Container */
+.closest-pair-container, .karatsuba-container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: #2a2b47; /* Slightly lighter card background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    width: 100%;
+    height: 700px; /* Adjust height to fit the graph */
+    margin-top: 10px; /* Added space above the container */
+    display: flex; /* Use flexbox to center the content */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .closest-pair-container, .karatsuba-container {
+        padding: 15px;
+        height: 400px; /* Adjust container height for smaller screens */
+    }
+}
+
+
+/* Styling for the title */
+.closest-pair-title, .karatsuba-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* Styling for the description text */
+.closest-pair-description, .karatsuba-description  {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #d1d1e9; /* Soft lavender description text */
+}
+
+/* Styling for file input */
+input[type="file"] {
+    display: none; /* Hide default file input */
+}
+
+/* Styling for the custom file input button */
+.custom-file-input {
+    background-color: #9c78ca;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-file-input:hover {
+    background-color: #7c5ca5; /* Slightly darker purple */
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.custom-file-input:active {
+    background-color: #5a4078; /* Even darker purple for active state */
+    transform: scale(1); /* Reset zoom effect */
+}
+
+/* Button container to align buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Styling for buttons */
+.Previous, .Next, .action-button {
+    background-color: #9c78ca;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+   
+}
+
+.Previous:hover, .Next:hover, .action-button:hover {
+    background-color: #7c5ca5; /* Slightly darker purple */
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.Previous:active, .Next:active, .action-button:active {
+    background-color: #5a4078; /* Even darker purple for active state */
+    transform: scale(1); /* Reset zoom effect */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .closest-pair-container,  .karatsuba-container {
+        padding: 15px;
+    }
+
+    .closest-pair-title, .karatsuba-title  {
+        font-size: 2rem;
+    }
+
+    .closest-pair-description, .karatsuba-description  {
+        font-size: 1rem;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .custom-file-input {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .Previous, .Next, .action-button {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+.GoHome {
+    background-color: #f44336;  /* Red background for home button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .GoHome:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+
