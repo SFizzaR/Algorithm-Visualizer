@@ -35,32 +35,35 @@ export const parsePointsFile = async (file) => {
     return findClosestPairRecursive(sortedPoints);
   };
   
-  // Recursive function to find the closest pair of points
-  const findClosestPairRecursive = (points) => {
-    // Base case: use brute force for small datasets
-    if (points.length <= 3) {
-      return bruteForceClosestPair(points);
-    }
-  
-    // Divide the points into left and right halves
-    const midIndex = Math.floor(points.length / 2);
-    const leftPoints = points.slice(0, midIndex);
-    const rightPoints = points.slice(midIndex);
-  
-    // Step 3 & 4: Find the closest pairs in each half and retain only one pair per group
-    const leftClosest = findClosestPairRecursive(leftPoints);
-    const rightClosest = findClosestPairRecursive(rightPoints);
-  
-    // Step 5: Determine the minimum distance (delta) from the closest pairs in both halves
-    const delta = Math.min(leftClosest.distance, rightClosest.distance);
-    const minPair = leftClosest.distance < rightClosest.distance ? leftClosest : rightClosest;
-  
-    // Step 6: Check cross-pairs near the dividing line to see if any are closer
-    const crossClosest = findCrossClosestPair(points, delta);
-  
-    // Return the closest pair among left, right, and cross pairs
-    return crossClosest.distance < minPair.distance ? crossClosest : minPair;
-  };
+  //Recursive function to find the closest pair of points
+const findClosestPairRecursive = (points) => {
+  // Base case: use brute force for small datasets
+  if (points.length <= 3) {
+    return bruteForceClosestPair(points);
+  }
+
+  // Divide the points into left and right halves
+  const midIndex = Math.floor(points.length / 2);
+  const leftPoints = points.slice(0, midIndex);
+  const rightPoints = points.slice(midIndex);
+
+  // Step 3 & 4: Find the closest pairs in each half
+  const leftClosest = findClosestPairRecursive(leftPoints);
+  const rightClosest = findClosestPairRecursive(rightPoints);
+
+  // Determine the minimum distance (delta) from the closest pairs in both halves
+  const delta = Math.min(leftClosest.distance, rightClosest.distance);
+
+  // Step 5: Check cross-pairs near the dividing line
+  const crossClosest = findCrossClosestPair(points, delta);
+
+  // Select the closest pair among left, right, and cross pairs
+  let closestPair = leftClosest.distance < rightClosest.distance ? leftClosest : rightClosest;
+  closestPair = crossClosest.distance < closestPair.distance ? crossClosest : closestPair;
+
+  return closestPair;
+};
+
   
   // Brute force method to find the closest pair of points in small datasets
   const bruteForceClosestPair = (points) => {
