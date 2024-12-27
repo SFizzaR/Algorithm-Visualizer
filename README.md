@@ -66,7 +66,7 @@ The **Karatsuba algorithm** is a fast multiplication algorithm that divides the 
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/yourusername/algorithm-visualizer.git
+   git clone https://github.com/SFizzaR/Algorithm-visualizer.git
    ```
 
 2. **Navigate to the project directory**  
