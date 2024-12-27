@@ -8,6 +8,7 @@ const KaratsubaStepByStep = () => {
   const [num2, setNum2] = useState('');
   const [splitNum1, setSplitNum1] = useState({ high: '', low: '' });
   const [splitNum2, setSplitNum2] = useState({ high: '', low: '' });
+  const [isDataReady, setIsDataReady] = useState(false);
 
   const [executionTime, setExecutionTime] = useState(null); // Timer state
   const [startTime, setStartTime] = useState(null); // Start time for the timer
@@ -33,6 +34,14 @@ const KaratsubaStepByStep = () => {
       handleFileUpload(selectedFile);
     }
   };
+
+  useEffect(() => {
+    if (splitNum1.high && splitNum1.low && splitNum2.high && splitNum2.low && multiplications.mulHigh !== null) {
+      setIsDataReady(true);
+    } else {
+      setIsDataReady(false);
+    }
+  }, [splitNum1, splitNum2, multiplications]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -226,8 +235,8 @@ const KaratsubaStepByStep = () => {
       {isFileUploaded && renderStep()}
 
       <div className="button-container">
-          <button className="action-button" onClick={() => setCurrentStep(currentStep - 1)} disabled={currentStep === 1}>Previous Step</button>
-          <button className="action-button" onClick={() => setCurrentStep(currentStep + 1)} disabled={currentStep === 3}>Next Step</button>
+         {currentStep > 1 &&( <button className="action-button" onClick={() => setCurrentStep(currentStep - 1)}>Previous Step</button>)}
+         {currentStep < 3 && isDataReady && (<button className="action-button" onClick={() => setCurrentStep(currentStep + 1)}>Next Step</button>)}
      </div> <div className="button-container">
       <button className="GoHome" onClick={() => navigate('/')}>Go Home</button>
       </div>
